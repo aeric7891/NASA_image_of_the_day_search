@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home Page" />
+    <item
+        android:id="@+id/imageOtd"
+        android:title="Image of the Day" />
+    <item
+        android:id="@+id/imageSearch"
+        android:title="Image Search" />
+    <item
+        android:id="@+id/imageHistory"
+        android:title="Image History" />
+</menu>
