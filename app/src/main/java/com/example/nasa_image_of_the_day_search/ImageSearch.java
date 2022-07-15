@@ -1,10 +1,8 @@
 package com.example.nasa_image_of_the_day_search;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class ImageSearch extends ToolbarLoader {
+public class ImageSearch extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
