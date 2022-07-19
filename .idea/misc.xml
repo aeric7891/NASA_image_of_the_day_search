@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/home_layout.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/image_history_layout.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/image_history_fragment.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/image_history_layout.xml" value="0.33" />
         <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/image_otd_layout.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/image_search_layout.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/row_layout.xml" value="0.22735507246376813" />
         <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/layout/toolbar_layout.xml" value="0.16847826086956522" />
         <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/menu/navigation_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Eric/Desktop/NASA_image_of_the_day_search/app/src/main/res/menu/toolbar_menu.xml" value="0.36666666666666664" />

@@ -1,16 +1,22 @@
 package com.example.nasa_image_of_the_day_search;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -24,7 +30,6 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -35,6 +40,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
+    Button saveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,12 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        saveButton = findViewById(R.id.saveButton);
+        if(saveButton!= null){
+            saveButton.setVisibility(View.GONE);
+        }
+
+
 
         drawerLayout = findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
@@ -115,7 +127,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         String title;
         String date;
         String imageURL;
-        String imageHD;
+        String imageURLHD;
         Bitmap image;
 
         @Override
@@ -136,7 +148,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 title = jsonObject.getString("title");
                 date = jsonObject.getString("date");
                 imageURL = jsonObject.getString("url");
-                imageHD = jsonObject.getString("hdurl");
+                imageURLHD = jsonObject.getString("hdurl");
                 url = new URL(imageURL);
                 urlConnection = (HttpURLConnection) url.openConnection();
                 inputStream = urlConnection.getInputStream();
@@ -151,11 +163,13 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
             for (int i = 0; i < 100; i++) {
                 try {
                     publishProgress(i);
-                    Thread.sleep(30);
+                    Thread.sleep(5);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+
+
 
             return null;
         }
@@ -170,10 +184,39 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            if(saveButton != null){
+                saveButton.setVisibility(View.VISIBLE);
+            }
+            TextView textView = findViewById(R.id.imageTitle);
+            textView.setText(title);
+            textView = findViewById(R.id.imageDate);
+            textView.setText(date);
+            Button button = findViewById(R.id.imageURL);
+            button.setText(imageURLHD);
             ImageView imageView = findViewById(R.id.imageView);
             imageView.setImageBitmap(image);
 
+            button.setOnClickListener(onClick -> {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(imageURLHD));
+                    startActivity(browserIntent);
+            });
+            button = findViewById(R.id.saveButton);
+            button.setOnClickListener(onClick -> {
+                String fileName = title + "." + date;
+                String filePath = getFilesDir().getPath().toString() + "/" + fileName;
+                File file = new File(filePath);
+                try (FileOutputStream out = new FileOutputStream(file, false)) {
+                    image.compress(Bitmap.CompressFormat.PNG, 100, out);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                Context context = getApplicationContext();
+                CharSequence text = "Image Saved";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            });
         }
     }
-
 }
