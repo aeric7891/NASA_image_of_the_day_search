@@ -1,5 +1,26 @@
 <resources>
-    <string name="app_name">NASA Image App</string>
+    <string name="app_name">NASA Image of the Day App</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+
+
+
+    <string name="home">Home Page</string>
+    <string name="imageOtd">Image of the Day</string>
+    <string name="imageSearch">Image Search</string>
+    <string name="imageHistory">Image History</string>
+    <string name="help">Help</string>
+
+    <string name="homeHelp">This is the home page. Use the toolbar icons or dropdown menu to move to another page.</string>
+    <string name="imageOtdHelp">This is the Image of the Day. Press save to save the image for later viewing in Image History.</string>
+    <string name="imageSearchHelp">This is the Image Search. Press "Select Date" to select the Image of the Day of a past date. Press save to save the image for later viewing in Image History.</string>
+    <string name="imageHistoryHelp">This is the Image History. Scroll through the titles in the bottom half of the screen. Select a title to display the image. Hold down on a title to display an option to delete the saved image.</string>
+
+    <string name="homeLayout">Welcome to NASA Image of the Day App. Select a page to view from the toolbar or dropdown menu.</string>
+    <string name="version">Version 1.0</string>
+    <string name="save">Save</string>
+    <string name="selectDate">Select Date</string>
+    <string name="imageSaved">Image Saved</string>
+    <string name="deleteImage">Delete Image?</string>
+    <string name="yes">Yes</string>
 </resources>

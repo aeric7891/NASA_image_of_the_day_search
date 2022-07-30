@@ -15,9 +15,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/homeLayout"
+                android:textColor="@color/white"
+                android:paddingTop="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/version"
+                android:textColor="@color/white"
+                android:paddingTop="10dp"/>
         </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView

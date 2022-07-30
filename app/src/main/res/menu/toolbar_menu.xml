@@ -2,25 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/home"
-        android:title="Home"
+        android:title="@string/home"
         android:icon="@drawable/home_foreground"
         android:orderInCategory="1"
         app:showAsAction="always" />
     <item android:id="@+id/imageOtd"
-        android:title="Image Of The Day"
+        android:title="@string/imageOtd"
         android:icon="@drawable/image_foreground"
         android:orderInCategory="2"
         app:showAsAction="always" />
 
     <item android:id="@+id/imageSearch"
-        android:title="Image Search"
+        android:title="@string/imageSearch"
         android:icon="@drawable/image_search_foreground"
         android:orderInCategory="3"
         app:showAsAction="always" />
 
     <item android:id="@+id/imageHistory"
-        android:title="Image History"
+        android:title="@string/imageHistory"
         android:icon="@drawable/image_history_foreground"
         android:orderInCategory="4"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/help"
+        android:title="@string/help"
+        android:icon="@drawable/help_foreground"
+        android:orderInCategory="5"
         app:showAsAction="always" />
 </menu>

@@ -1,8 +1,11 @@
 package com.example.nasa_image_of_the_day_search;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
+
+import androidx.appcompat.app.AlertDialog;
 
 import java.util.Calendar;
 
@@ -28,5 +31,10 @@ public class ImageSearch extends BaseActivity {
                     }, currentYear, currentMonth, currentDay);
             picker.show();
         });
+    }
+    void AlertDialog (Context context) {
+        new AlertDialog.Builder(context)
+                .setMessage(R.string.imageSearchHelp)
+                .setPositiveButton(android.R.string.yes, null).show();
     }
 }

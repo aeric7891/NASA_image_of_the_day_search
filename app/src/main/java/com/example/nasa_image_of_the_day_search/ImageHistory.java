@@ -1,13 +1,19 @@
 package com.example.nasa_image_of_the_day_search;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -53,7 +59,7 @@ public class ImageHistory extends BaseActivity {
                     .commit();
         });
         myList.setOnItemLongClickListener((list, item, position, id) -> {
-            Snackbar.make(findViewById(R.id.listView), "Delete image?", Snackbar.LENGTH_LONG).setAction("Yes", click -> {
+            Snackbar.make(findViewById(R.id.listView), getString(R.string.deleteImage), Snackbar.LENGTH_LONG).setAction(getString(R.string.yes), click -> {
                 element = elements.get(position);
                 File file = new File(getFilesDir(),element.title + "." + element.date);
                 file.delete();
@@ -102,5 +108,10 @@ public class ImageHistory extends BaseActivity {
 
             return newView;
         }
+    }
+    void AlertDialog (Context context) {
+        new AlertDialog.Builder(context)
+                .setMessage(R.string.imageHistoryHelp)
+                .setPositiveButton(android.R.string.yes, null).show();
     }
 }

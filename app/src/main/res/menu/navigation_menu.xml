@@ -2,14 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:title="Home Page" />
+        android:title="@string/home" />
     <item
         android:id="@+id/imageOtd"
-        android:title="Image of the Day" />
+        android:title="@string/imageOtd" />
     <item
         android:id="@+id/imageSearch"
-        android:title="Image Search" />
+        android:title="@string/imageSearch" />
     <item
         android:id="@+id/imageHistory"
-        android:title="Image History" />
+        android:title="@string/imageHistory" />
+    <item
+        android:id="@+id/help"
+        android:title="@string/help" />
 </menu>

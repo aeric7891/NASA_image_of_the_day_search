@@ -36,11 +36,13 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public abstract class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Button saveButton;
+
+    abstract void AlertDialog(Context context);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +86,10 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 newActivity = new Intent(BaseActivity.this, ImageHistory.class);
                 startActivity(newActivity);
                 break;
+            case R.id.help:
+                AlertDialog(this);
+                break;
+
         }
         return true;
     }
@@ -120,9 +126,16 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                 newActivity = new Intent(BaseActivity.this, ImageHistory.class);
                 startActivity(newActivity);
                 break;
+            case R.id.help:
+                AlertDialog(this);
+                break;
         }
         return true;
     }
+
+
+
+
     public class ImageLoader extends AsyncTask<String, Integer, String> {
         String title;
         String date;
@@ -211,7 +224,7 @@ public class BaseActivity extends AppCompatActivity implements NavigationView.On
                     e.printStackTrace();
                 }
                 Context context = getApplicationContext();
-                CharSequence text = "Image Saved";
+                CharSequence text = getString(R.string.imageSaved);
                 int duration = Toast.LENGTH_SHORT;
 
                 Toast toast = Toast.makeText(context, text, duration);

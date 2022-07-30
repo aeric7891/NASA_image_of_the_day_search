@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">L\'application NASA Image du Jour</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string name="home">Page d\'accueil</string>
+    <string name="imageOtd">Image du jour</string>
+    <string name="imageSearch">Recherche d\'image</string>
+    <string name="imageHistory">Historique des images</string>
+    <string name="help">Aider</string>
+
+    <string name="homeHelp">Ceci est la page d\'accueil. Utilisez les icônes de la barre d\'outils ou le menu déroulant pour passer à une autre page.</string>
+    <string name="imageOtdHelp">C\'est l\'image du jour. Appuyez sur Enregistrer pour enregistrer l\'image pour une visualisation ultérieure dans l\'historique des images.</string>
+    <string name="imageSearchHelp">C\'est la recherche d\'images. Appuyez sur "Sélectionner la date" pour sélectionner l\'image du jour d\'une date passée. Appuyez sur Enregistrer pour enregistrer l\'image pour une visualisation ultérieure dans l\'historique des images.</string>
+    <string name="imageHistoryHelp">Il s\'agit de l\'historique des images. Faites défiler les titres dans la moitié inférieure de l\'écran. Sélectionnez un titre pour afficher l\'image. Maintenez un titre enfoncé pour afficher une option permettant de supprimer l\'image enregistrée.</string>
+    <string name="yes">Oui</string>
+
+    <string name="homeLayout">Bienvenue sur l\'application NASA Image du Jour. Sélectionnez une page à afficher à partir de la barre d\'outils ou de la fenêtre de navigation.</string>
+    <string name="version">Version 1.0</string>
+    <string name="save">Sauvegarder</string>
+    <string name="selectDate">Sélectionner une date</string>
+    <string name="imageSaved">Image enregistrée</string>
+    <string name="deleteImage">Supprimer l\'image</string>
+</resources>
