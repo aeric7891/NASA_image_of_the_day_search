@@ -21,6 +21,10 @@ public class ImageOtd extends BaseActivity {
         imageLoader.execute("https://api.nasa.gov/planetary/apod?api_key=aKqRqcIqxsZ7TqBMIgYpAh9fTAT34DAfxqZMKIiX");
 
     }
+    /**
+     * Displays an alert dialog containing specified text.
+     * @param context the running activity to display the alert dialog over
+     */
     void AlertDialog (Context context) {
         new AlertDialog.Builder(context)
                 .setMessage(R.string.imageOtdHelp)

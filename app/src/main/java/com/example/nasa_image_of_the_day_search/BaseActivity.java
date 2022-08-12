@@ -56,8 +56,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
             saveButton.setVisibility(View.GONE);
         }
 
-
-
         drawerLayout = findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -133,9 +131,13 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
         return true;
     }
 
-
-
-
+    /**
+     * Class that fetches the JSONObject of the supplied url (through the execute function of the instantiated ImageLoader object)
+     * The JSONObject is then parsed for information regarding an image's title, date, hdurl, and url.
+     * The image's url is then downloaded and displayed in the activity's ImageView.
+     * Also adds functionality of the activity's save button, where pressing save saves the image on file.
+     * object's execute function.
+     */
     public class ImageLoader extends AsyncTask<String, Integer, String> {
         String title;
         String date;
@@ -197,9 +199,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            if(saveButton != null){
-                saveButton.setVisibility(View.VISIBLE);
-            }
+
             TextView textView = findViewById(R.id.imageTitle);
             textView.setText(title);
             textView = findViewById(R.id.imageDate);
@@ -209,11 +209,16 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
             ImageView imageView = findViewById(R.id.imageView);
             imageView.setImageBitmap(image);
 
+            if(saveButton != null){
+                saveButton.setVisibility(View.VISIBLE);
+            }
+
             button.setOnClickListener(onClick -> {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(imageURLHD));
                     startActivity(browserIntent);
             });
             button = findViewById(R.id.saveButton);
+
             button.setOnClickListener(onClick -> {
                 String fileName = title + "." + date;
                 String filePath = getFilesDir().getPath().toString() + "/" + fileName;

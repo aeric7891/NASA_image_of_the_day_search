@@ -32,6 +32,10 @@ public class ImageSearch extends BaseActivity {
             picker.show();
         });
     }
+    /**
+     * Displays an alert dialog containing specified text.
+     * @param context the running activity to display the alert dialog over
+     */
     void AlertDialog (Context context) {
         new AlertDialog.Builder(context)
                 .setMessage(R.string.imageSearchHelp)
